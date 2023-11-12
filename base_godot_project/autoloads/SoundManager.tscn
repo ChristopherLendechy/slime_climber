@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dingkqliak7tr"]
+
+[ext_resource type="Script" path="res://autoloads/SoundManager.gd" id="1_ultq8"]
+[ext_resource type="Script" path="res://management/sound_management/SoundQueue.gd" id="2_gbq7l"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_ultq8")
+
+[node name="CameraFlashSQ" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_gbq7l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CameraFlashSQ"]
