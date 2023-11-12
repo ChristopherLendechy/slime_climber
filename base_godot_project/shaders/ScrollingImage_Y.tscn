@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2q3nq6lq6mfm"]
+
+[ext_resource type="Shader" path="res://ScrollingImage_Y.gdshader" id="1_sgb6d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6ckn"]
+resource_local_to_scene = true
+shader = ExtResource("1_sgb6d")
+shader_parameter/scroll_speed = 0.2
+shader_parameter/positive = true
+
+[node name="ScrollingImageY" type="TextureRect"]
+material = SubResource("ShaderMaterial_p6ckn")
+stretch_mode = 1
