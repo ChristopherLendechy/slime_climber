@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://dbw201vbaxen6"]
+[gd_scene load_steps=5 format=3 uid="uid://dbw201vbaxen6"]
+
+[ext_resource type="PackedScene" uid="uid://bh8r24yjio4fw" path="res://scenes/backgrounds/side_walls.tscn" id="1_3oasu"]
+[ext_resource type="Script" path="res://scenes/playground/GamePlayground.gd" id="1_fd0yu"]
+[ext_resource type="PackedScene" uid="uid://dagc37o6uwske" path="res://scenes/badThings/spawner/spawner.tscn" id="3_jhxve"]
+[ext_resource type="PackedScene" uid="uid://bcb1h2uey52r2" path="res://scenes/player/player2.tscn" id="4_w0hiy"]
 
 [node name="PlaygroundBaseLevel" type="Node2D"]
+script = ExtResource("1_fd0yu")
+
+[node name="side_walls" parent="." instance=ExtResource("1_3oasu")]
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 100.0
+
+[node name="spawner" parent="." instance=ExtResource("3_jhxve")]
+position = Vector2(225, 20)
+
+[node name="player" parent="." instance=ExtResource("4_w0hiy")]
+position = Vector2(96, 550)
