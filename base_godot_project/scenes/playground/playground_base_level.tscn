@@ -14,7 +14,7 @@ script = ExtResource("1_fd0yu")
 wait_time = 100.0
 
 [node name="spawner" parent="." instance=ExtResource("3_jhxve")]
-position = Vector2(225, 20)
+position = Vector2(225, -16)
 
 [node name="player" parent="." instance=ExtResource("4_w0hiy")]
 position = Vector2(96, 550)

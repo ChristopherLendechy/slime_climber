@@ -1,19 +1,20 @@
 extends Node2D
 
 var LeftPos = Vector2(50,0)
-var RightPos = Vector2(430,0)
+var RightPos = Vector2(400,0)
 var Left = true
 
 
 func MoveDown():
 	var tween
 	tween = create_tween()
-	tween.tween_property($".","global_position",self.global_position + Vector2(0, 700),2)
-
+	tween.tween_property($".","global_position",self.global_position + Vector2(0, 800),2)
+	
 func StartLeft():
 	global_position = LeftPos
 	
 func StartRight():
+	$Sprite2D.flip_v = true
 	global_position = RightPos
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:

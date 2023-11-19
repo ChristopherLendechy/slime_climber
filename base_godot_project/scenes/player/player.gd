@@ -42,3 +42,13 @@ func startAnimation():
 	print("not flying")
 	isFlying = false
 	
+	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy"):
+		if area.get_parent().get_parent().isFlying:
+			print("hurt")
+		else:
+			print("player dead")
+	pass # Replace with function body.

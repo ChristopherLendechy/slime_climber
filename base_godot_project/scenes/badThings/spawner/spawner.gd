@@ -17,7 +17,6 @@ func spawn_enemy():
 		
 	
 func _on_timer_timeout() -> void:
-	print("timer done!")
 	spawn_enemy()
 
 func _ready():
@@ -36,3 +35,9 @@ func make_do_thing(enemy):
 		enemy.PlayDefaultAnimation()
 	if enemy.has_method("MoveDown"):
 		enemy.MoveDown()
+
+
+func _on_despawner_area_entered(area: Area2D) -> void:
+	await get_tree().create_timer(0.3).timeout
+	area.get_parent().queue_free()
+	

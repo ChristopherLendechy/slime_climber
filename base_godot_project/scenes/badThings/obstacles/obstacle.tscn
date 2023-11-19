@@ -1,22 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://6uyd25goa33o"]
 
 [ext_resource type="Script" path="res://scenes/badThings/obstacles/obstacle.gd" id="1_76h3k"]
-[ext_resource type="Texture2D" uid="uid://c0lqcer0mupvt" path="res://icon.svg" id="2_2mwtb"]
+[ext_resource type="Texture2D" uid="uid://rnqo8g1beci0" path="res://assets/sprites/enviroments/test_obstacle.png" id="2_bpw1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcvkq"]
 size = Vector2(111, 113)
 
 [node name="obstacle" type="Node2D"]
-position = Vector2(50, 0)
 script = ExtResource("1_76h3k")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_2mwtb")
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["obstacle"]]
+self_modulate = Color(0.6, 0.913725, 0.976471, 1)
+rotation = 1.5708
+scale = Vector2(2.76, 2.76)
+texture = ExtResource("2_bpw1g")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2.76, 2.76)
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_bcvkq")
