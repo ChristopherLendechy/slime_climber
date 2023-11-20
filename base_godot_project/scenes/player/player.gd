@@ -1,26 +1,54 @@
 extends Node2D
 
-@onready var _animation_player = $AnimationPlayer
 
-var walk_right = true
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var tween
+var fromLeft = true
+var startingPos
+var isFlying = false
 func _ready() -> void:
-	_animation_player.play("Walk")
+	animated_sprite_2d.play("default")
+	startingPos = self.global_position
 	pass
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		print("space hit")
-		_animation_player.stop()
-		if walk_right:
-			_animation_player.play("Fly")
+
+		if tween != null and !tween.is_running():
+			animated_sprite_2d.stop()
+			Fly()
+		elif tween == null:
+			animated_sprite_2d.stop()
+			Fly()
+
+func Fly():
+	print("flying")
+	isFlying = true
+	tween = create_tween()
+	if fromLeft:
+		tween.parallel().tween_property($AnimatedSprite2D,"rotation",deg_to_rad(-90), 0.5)
+		tween.parallel().tween_property($AnimatedSprite2D,"global_position",startingPos + Vector2(290,0),0.5)
+		fromLeft = false
+	else:
+		tween.parallel().tween_property($AnimatedSprite2D,"rotation",deg_to_rad(90), 0.5)
+		tween.parallel().tween_property($AnimatedSprite2D,"global_position",startingPos,0.5)
+		fromLeft =  true
+		
+	tween.connect("finished",startAnimation,4)
+	
+func startAnimation():
+	animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
+	animated_sprite_2d.play("default")
+	print("not flying")
+	isFlying = false
+	
+	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy"):
+		if area.get_parent().get_parent().isFlying:
+			print("hurt")
 		else:
-			_animation_player.play("Fly_Left")
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	print(anim_name)
-	if anim_name == "Fly" or anim_name == "Fly_Left":
-		if walk_right:
-			walk_right = false
-			_animation_player.play("Walk_LEFT")
-		else:
-			walk_right = true
-			_animation_player.play("Walk")
+			print("player dead")
+	pass # Replace with function body.
