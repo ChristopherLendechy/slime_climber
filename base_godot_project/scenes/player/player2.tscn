@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcb1h2uey52r2"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_5fio3"]
-[ext_resource type="SpriteFrames" uid="uid://rylc6050fkvk" path="res://assets/sprites/test_anim.tres" id="1_7yp1n"]
+[ext_resource type="SpriteFrames" uid="uid://7f3htaionmhm" path="res://assets/sprites/test_anim2.tres" id="2_xki5n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xp5bx"]
 
@@ -10,7 +10,7 @@ script = ExtResource("1_5fio3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-sprite_frames = ExtResource("1_7yp1n")
+sprite_frames = ExtResource("2_xki5n")
 speed_scale = 2.0
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D" groups=["player"]]

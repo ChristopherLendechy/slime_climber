@@ -3,7 +3,7 @@ extends Node2D
 var LeftPos = Vector2(50,0)
 var RightPos = Vector2(400,0)
 var Left = true
-
+signal playerHit
 
 func MoveDown():
 	var tween
@@ -22,6 +22,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if area.get_parent().get_parent().isFlying:
 			print("hurt")
 		else:
+			playerHit.emit()
 			print("player dead")
 
 func Swappable():

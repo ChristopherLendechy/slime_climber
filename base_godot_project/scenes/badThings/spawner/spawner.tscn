@@ -17,7 +17,7 @@ LEVEL1 = Array[PackedScene]([ExtResource("2_l3ok3"), ExtResource("3_7gytu")])
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="despawner"]
-position = Vector2(-2, 853)
+position = Vector2(-2, 736)
 shape = SubResource("RectangleShape2D_4nhup")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

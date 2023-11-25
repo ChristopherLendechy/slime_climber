@@ -39,7 +39,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 		warnings.append("Chlid not AudioStreamPlayer")
 		return warnings
 		
-	return super._get_configuration_warnings()
+	return PackedStringArray()
 	
 
 func play_sound():
