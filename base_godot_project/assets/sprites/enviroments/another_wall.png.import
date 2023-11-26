@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwrsw1gdkdpvt"
-path="res://.godot/imported/test_bat_animated-Sheet.png-79c873a578d2a58eb75ffb035d40b193.ctex"
+uid="uid://s2172atx64r8"
+path="res://.godot/imported/another_wall.png-1de9a0f23e0884619c06288eb4b0eb27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/test_bat_animated-Sheet.png"
-dest_files=["res://.godot/imported/test_bat_animated-Sheet.png-79c873a578d2a58eb75ffb035d40b193.ctex"]
+source_file="res://assets/sprites/enviroments/another_wall.png"
+dest_files=["res://.godot/imported/another_wall.png-1de9a0f23e0884619c06288eb4b0eb27.ctex"]
 
 [params]
 

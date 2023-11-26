@@ -7,7 +7,7 @@ var fromLeft = true
 var startingPos
 var isFlying = false
 func _ready() -> void:
-	animated_sprite_2d.play("default")
+	animated_sprite_2d.play("default2")
 	startingPos = self.global_position
 	pass
 
@@ -26,10 +26,12 @@ func Fly():
 	isFlying = true
 	tween = create_tween()
 	if fromLeft:
+		animated_sprite_2d.play("flying")
 		tween.parallel().tween_property($AnimatedSprite2D,"rotation",deg_to_rad(-90), 0.5)
 		tween.parallel().tween_property($AnimatedSprite2D,"global_position",startingPos + Vector2(290,0),0.5)
 		fromLeft = false
 	else:
+		animated_sprite_2d.play("flying")
 		tween.parallel().tween_property($AnimatedSprite2D,"rotation",deg_to_rad(90), 0.5)
 		tween.parallel().tween_property($AnimatedSprite2D,"global_position",startingPos,0.5)
 		fromLeft =  true
@@ -38,7 +40,7 @@ func Fly():
 	
 func startAnimation():
 	animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
-	animated_sprite_2d.play("default")
+	animated_sprite_2d.play("default2")
 	print("not flying")
 	isFlying = false
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv76fmakx0ri"
-path="res://.godot/imported/test_bat.png-fe029e9d7f3e021d05c6dd74a0c3c2c2.ctex"
+uid="uid://dg4ac000eweyb"
+path="res://.godot/imported/snail_enemy_recolor-Sheet.png-76d93d23be2359dc467277fd6861f919.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/test_bat.png"
-dest_files=["res://.godot/imported/test_bat.png-fe029e9d7f3e021d05c6dd74a0c3c2c2.ctex"]
+source_file="res://assets/sprites/enemies/snail_enemy_recolor-Sheet.png"
+dest_files=["res://.godot/imported/snail_enemy_recolor-Sheet.png-76d93d23be2359dc467277fd6861f919.ctex"]
 
 [params]
 
