@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwrsw1gdkdpvt"
-path="res://.godot/imported/test_bat_animated-Sheet.png-79c873a578d2a58eb75ffb035d40b193.ctex"
+uid="uid://p3cqya4e8mtv"
+path="res://.godot/imported/spider_test.png-47f3fb2d2507525623217b35c0bdc9c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/test_bat_animated-Sheet.png"
-dest_files=["res://.godot/imported/test_bat_animated-Sheet.png-79c873a578d2a58eb75ffb035d40b193.ctex"]
+source_file="res://assets/sprites/enemies/spider_test.png"
+dest_files=["res://.godot/imported/spider_test.png-47f3fb2d2507525623217b35c0bdc9c8.ctex"]
 
 [params]
 

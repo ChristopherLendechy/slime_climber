@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwrsw1gdkdpvt"
-path="res://.godot/imported/test_bat_animated-Sheet.png-79c873a578d2a58eb75ffb035d40b193.ctex"
+uid="uid://gc3mqbytblqv"
+path="res://.godot/imported/side_switch-Sheet.png-f194842f7818644d4b40961b3228f916.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/test_bat_animated-Sheet.png"
-dest_files=["res://.godot/imported/test_bat_animated-Sheet.png-79c873a578d2a58eb75ffb035d40b193.ctex"]
+source_file="res://assets/sprites/player/side_switch-Sheet.png"
+dest_files=["res://.godot/imported/side_switch-Sheet.png-f194842f7818644d4b40961b3228f916.ctex"]
 
 [params]
 

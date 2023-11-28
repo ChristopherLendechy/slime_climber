@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbw201vbaxen6"]
+[gd_scene load_steps=6 format=3 uid="uid://dbw201vbaxen6"]
 
 [ext_resource type="PackedScene" uid="uid://bh8r24yjio4fw" path="res://scenes/backgrounds/side_walls.tscn" id="1_3oasu"]
 [ext_resource type="Script" path="res://scenes/playground/GamePlayground.gd" id="1_fd0yu"]
 [ext_resource type="PackedScene" uid="uid://dagc37o6uwske" path="res://scenes/badThings/spawner/spawner.tscn" id="3_jhxve"]
 [ext_resource type="PackedScene" uid="uid://bcb1h2uey52r2" path="res://scenes/player/player2.tscn" id="4_w0hiy"]
+[ext_resource type="Texture2D" uid="uid://bhswd6t46f66v" path="res://assets/sprites/enviroments/bg_test.png" id="6_tei07"]
 
 [node name="PlaygroundBaseLevel" type="Node2D"]
 script = ExtResource("1_fd0yu")
@@ -47,3 +48,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "00000"
 horizontal_alignment = 1
+[node name="BgTest" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(233, 320)
+texture = ExtResource("6_tei07")
