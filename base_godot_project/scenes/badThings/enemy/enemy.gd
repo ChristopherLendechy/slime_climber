@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $BatSprite2
+@export var animated_sprite_2d: AnimatedSprite2D
 
 
 var LeftPos = Vector2(-230,0)
@@ -17,6 +17,7 @@ func PlayDefaultAnimation():
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
+		print("ENEMY")
 		if area.get_parent().get_parent().isFlying:
 			print("hurt")
 			enemyHit.emit(self)

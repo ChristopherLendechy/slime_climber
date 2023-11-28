@@ -14,7 +14,7 @@ func spawn_enemy():
 			var enemy_scene = LEVEL1[random_index]
 			var enemy_instance = enemy_scene.instantiate()
 			add_child(enemy_instance)
-			print("Added Enemy")
+			
 			if(enemy_instance.is_in_group("enemy")):
 				enemy_instance.connect("enemyHit", addPoints)
 			enemy_instance.connect("playerHit", gameOverHappened)
@@ -34,9 +34,15 @@ func make_do_thing(enemy):
 	if enemy.has_method("StartLeft"):
 		if enemy.Left:
 			enemy.StartLeft()
+	if enemy.has_method("MoveDownAndLeft"):
+		if enemy.Left:
+			enemy.MoveDownAndLeft()
 	if enemy.has_method("StartRight"):
 		if !enemy.Left:
 			enemy.StartRight()
+	if enemy.has_method("MoveDownAndRight"):
+		if !enemy.Left:
+			enemy.MoveDownAndRight()
 	if enemy.has_method("PlayDefaultAnimation"):
 		enemy.PlayDefaultAnimation()
 	if enemy.has_method("MoveDown"):
