@@ -2,7 +2,7 @@ extends Node2D
 
 @export var animated_sprite_2d: AnimatedSprite2D
 
-
+@onready var soundQueue = $SoundQueue
 var LeftPos = Vector2(450,-48)
 var RightPos = Vector2(45,-48)
 var Left = true
@@ -20,6 +20,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		print("SNAIL")
 		if area.get_parent().get_parent().isFlying:
 			print("hurt")
+			playThisSound()
 			enemyHit.emit(self)
 		else:
 			playerHit.emit()
@@ -53,3 +54,6 @@ func MoveDownAndLeft():
 
 func _ready() -> void:
 	$TestWall.global_position = Vector2(240,23)
+
+func playThisSound():
+	soundQueue.play_sound()

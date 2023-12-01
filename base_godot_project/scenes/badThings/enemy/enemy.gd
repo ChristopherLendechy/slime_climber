@@ -20,6 +20,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		print("ENEMY")
 		if area.get_parent().get_parent().isFlying:
 			print("hurt")
+			playThisSound()
 			enemyHit.emit(self)
 		else:
 			playerHit.emit()
