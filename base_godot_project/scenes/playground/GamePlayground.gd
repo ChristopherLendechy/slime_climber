@@ -3,6 +3,8 @@ extends Node2D
 var current_power_up
 var number_of_powerup: int
 var score : int = 0
+
+
 @onready var spawner = %spawner
 @onready var timer = $GameTimer
 @onready var score_label = %ScoreLabel
