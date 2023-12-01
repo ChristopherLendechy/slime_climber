@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbw201vbaxen6"]
+[gd_scene load_steps=13 format=3 uid="uid://dbw201vbaxen6"]
 
 [ext_resource type="PackedScene" uid="uid://bh8r24yjio4fw" path="res://scenes/backgrounds/side_walls.tscn" id="1_3oasu"]
 [ext_resource type="Script" path="res://scenes/playground/GamePlayground.gd" id="1_fd0yu"]
 [ext_resource type="PackedScene" uid="uid://dagc37o6uwske" path="res://scenes/badThings/spawner/spawner.tscn" id="3_jhxve"]
 [ext_resource type="PackedScene" uid="uid://bcb1h2uey52r2" path="res://scenes/player/player2.tscn" id="4_w0hiy"]
-[ext_resource type="Theme" uid="uid://bi5spxiu2h766" path="res://scenes/playground/theme1.tres" id="6_tcqwf"]
-[ext_resource type="SpriteFrames" uid="uid://7f3htaionmhm" path="res://assets/sprites/test_anim2.tres" id="6_w4wv1"]
 [ext_resource type="Texture2D" uid="uid://s5gptssewjf6" path="res://assets/sprites/enviroments/outer_layer.png" id="6_dcsgt"]
+[ext_resource type="Theme" uid="uid://bi5spxiu2h766" path="res://scenes/playground/theme1.tres" id="6_tcqwf"]
 [ext_resource type="Texture2D" uid="uid://bhswd6t46f66v" path="res://assets/sprites/enviroments/bg_test.png" id="6_tei07"]
+[ext_resource type="SpriteFrames" uid="uid://7f3htaionmhm" path="res://assets/sprites/test_anim2.tres" id="6_w4wv1"]
 [ext_resource type="Script" path="res://scenes/backgrounds/paralax.gd" id="7_ah6cj"]
 [ext_resource type="Texture2D" uid="uid://c82g1d7ivbnkj" path="res://assets/sprites/enviroments/inner_layer.png" id="8_oj53i"]
 [ext_resource type="Texture2D" uid="uid://caj4bfux7e7mn" path="res://assets/sprites/enviroments/back_layer.png" id="9_do4ln"]
@@ -22,7 +22,6 @@ corner_detail = 20
 
 [node name="PlaygroundBaseLevel" type="Node2D"]
 script = ExtResource("1_fd0yu")
-
 
 [node name="side_walls" parent="." instance=ExtResource("1_3oasu")]
 
@@ -111,7 +110,6 @@ position = Vector2(77, 109)
 sprite_frames = ExtResource("6_w4wv1")
 flip_h = true
 
-[connection signal="pressed" from="Control/RestartPanel/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [node name="BgTest" type="Sprite2D" parent="."]
 visible = false
 z_index = -1
@@ -140,3 +138,5 @@ z_index = -5
 position = Vector2(231, 320)
 texture = ExtResource("9_do4ln")
 script = ExtResource("7_ah6cj")
+
+[connection signal="pressed" from="Control/RestartPanel/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

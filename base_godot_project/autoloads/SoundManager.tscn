@@ -10,8 +10,8 @@ script = ExtResource("1_ultq8")
 [node name="song_loop" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_gbq7l")
+count = 5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="song_loop"]
 stream = ExtResource("3_emta6")
 volume_db = -15.928
-autoplay = true

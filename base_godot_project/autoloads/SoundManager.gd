@@ -13,10 +13,12 @@ var soundPoolssByName = {} # <string,SoundPool>
 func _ready() -> void:
 	Instance = self
 	# Example - REMOVE After Use
-	soundQueuesByName["song_loop"] = %CameraFlashSQ
+	soundQueuesByName["song_loop"] = %song_loop
 
 
 # Example, remove after use
 func PlaySongLoop():
 	soundQueuesByName["song_loop"].play_sound()
 
+func StopSongLoop():
+	soundQueuesByName["song_loop"].stop_sound()

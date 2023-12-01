@@ -4,7 +4,8 @@ var next_scene = preload("res://scenes/playground/playground_base_level.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	SoundManager.PlaySongLoop()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_qpil7"]
 [ext_resource type="Texture2D" uid="uid://ihta328gaipi" path="res://scenes/ui/main_menu.png" id="2_xchs0"]
 [ext_resource type="Theme" uid="uid://bi5spxiu2h766" path="res://scenes/playground/theme1.tres" id="3_1n2v0"]
-[ext_resource type="PackedScene" uid="uid://dingkqliak7tr" path="res://autoloads/SoundManager.tscn" id="3_l8ess"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -65,8 +64,6 @@ size_flags_vertical = 4
 theme = ExtResource("3_1n2v0")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Exit Game"
-
-[node name="SoundManager" parent="." instance=ExtResource("3_l8ess")]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

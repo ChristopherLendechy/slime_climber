@@ -47,3 +47,8 @@ func play_sound():
 		audioStreamPlayers[next].play()
 		next = next + 1
 		next %=audioStreamPlayers.size()
+
+func stop_sound():
+		if audioStreamPlayers[next -1].playing:
+			audioStreamPlayers[next -1].stop()
+	

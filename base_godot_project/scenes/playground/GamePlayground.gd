@@ -39,4 +39,5 @@ func _process(delta):
 
 func _on_restart_button_pressed() -> void:
 	print("Reset")
+	SoundManager.StopSongLoop()
 	get_tree().change_scene_to_packed(next_scene)
