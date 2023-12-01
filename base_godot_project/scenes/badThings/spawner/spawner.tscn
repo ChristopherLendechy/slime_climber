@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dagc37o6uwske"]
+
+[ext_resource type="Script" path="res://scenes/badThings/spawner/spawner.gd" id="1_gg4hc"]
+[ext_resource type="PackedScene" uid="uid://csqa707dlmhw1" path="res://scenes/badThings/enemy/enemy.tscn" id="2_l3ok3"]
+[ext_resource type="PackedScene" uid="uid://6uyd25goa33o" path="res://scenes/badThings/obstacles/obstacle.tscn" id="3_7gytu"]
+[ext_resource type="PackedScene" uid="uid://dm2ehajla7nxr" path="res://scenes/badThings/enemy/snail.tscn" id="4_xnvb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nhup"]
+size = Vector2(789, 100)
+
+[node name="spawner" type="Marker2D"]
+script = ExtResource("1_gg4hc")
+LEVEL1 = Array[PackedScene]([ExtResource("2_l3ok3"), ExtResource("3_7gytu"), ExtResource("4_xnvb7")])
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="despawner" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="despawner"]
+position = Vector2(-2, 736)
+shape = SubResource("RectangleShape2D_4nhup")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="despawner" to="." method="_on_despawner_area_entered"]

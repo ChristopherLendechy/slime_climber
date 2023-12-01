@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0k414o70i706"]
+
+[ext_resource type="Texture2D" uid="uid://p3cqya4e8mtv" path="res://assets/sprites/enemies/spider_test.png" id="1_sq5jm"]
+
+[node name="Spider" type="Node2D"]
+
+[node name="Spider" type="Sprite2D" parent="."]
+rotation = -0.652394
+texture = ExtResource("1_sq5jm")

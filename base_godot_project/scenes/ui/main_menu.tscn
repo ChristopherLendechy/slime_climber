@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bye1bkyegjpam"]
+[gd_scene load_steps=4 format=3 uid="uid://bye1bkyegjpam"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_qpil7"]
+[ext_resource type="Texture2D" uid="uid://ihta328gaipi" path="res://scenes/ui/main_menu.png" id="2_xchs0"]
+[ext_resource type="Theme" uid="uid://bi5spxiu2h766" path="res://scenes/playground/theme1.tres" id="3_1n2v0"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -11,7 +13,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qpil7")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 640.0
+texture = ExtResource("2_xchs0")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,14 +45,6 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 alignment = 1
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
-text = "Game Title"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
@@ -52,12 +53,17 @@ size_flags_vertical = 10
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_1n2v0")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Start Game"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_1n2v0")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Exit Game"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

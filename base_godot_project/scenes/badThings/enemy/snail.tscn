@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dm2ehajla7nxr"]
+
+[ext_resource type="Script" path="res://scenes/badThings/enemy/snail.gd" id="1_8nisi"]
+[ext_resource type="SpriteFrames" uid="uid://rylc6050fkvk" path="res://assets/sprites/test_anim.tres" id="2_gsqci"]
+[ext_resource type="SpriteFrames" uid="uid://cb0astfbnxg0m" path="res://assets/sprites/enemies/snailFrames.tres" id="3_jmige"]
+[ext_resource type="Texture2D" uid="uid://c8laqyws4ns1f" path="res://assets/sprites/enviroments/test_wall.png" id="4_g1oho"]
+[ext_resource type="PackedScene" uid="uid://cui1h5hhri5ap" path="res://management/sound_management/SoundQueue.tscn" id="5_sm1cv"]
+[ext_resource type="AudioStream" uid="uid://5wfvqlqbo5k1" path="res://assets/sounds/bonk-6.wav" id="6_2ilbt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vclu7"]
+radius = 42.2966
+
+[node name="snail" type="Node2D" node_paths=PackedStringArray("animated_sprite_2d") groups=["enemy"]]
+script = ExtResource("1_8nisi")
+animated_sprite_2d = NodePath("SnailSprite")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+self_modulate = Color(0.866667, 0.133333, 0.0666667, 1)
+sprite_frames = ExtResource("2_gsqci")
+frame = 7
+frame_progress = 0.811464
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+
+[node name="SnailSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(45, -50)
+sprite_frames = ExtResource("3_jmige")
+
+[node name="Area2D" type="Area2D" parent="SnailSprite" groups=["enemy"]]
+position = Vector2(4, 12)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnailSprite/Area2D"]
+position = Vector2(-7, 15)
+shape = SubResource("CircleShape2D_vclu7")
+
+[node name="TestWall" type="Sprite2D" parent="."]
+position = Vector2(240, 23)
+rotation = 1.5708
+scale = Vector2(2.92662, 7.50013)
+texture = ExtResource("4_g1oho")
+
+[node name="SoundQueue" parent="." instance=ExtResource("5_sm1cv")]
+count = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundQueue"]
+stream = ExtResource("6_2ilbt")
+
+[connection signal="area_entered" from="SnailSprite/Area2D" to="." method="_on_area_2d_area_entered"]

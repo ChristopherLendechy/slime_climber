@@ -1,3 +1,142 @@
-[gd_scene format=3 uid="uid://dbw201vbaxen6"]
+[gd_scene load_steps=13 format=3 uid="uid://dbw201vbaxen6"]
+
+[ext_resource type="PackedScene" uid="uid://bh8r24yjio4fw" path="res://scenes/backgrounds/side_walls.tscn" id="1_3oasu"]
+[ext_resource type="Script" path="res://scenes/playground/GamePlayground.gd" id="1_fd0yu"]
+[ext_resource type="PackedScene" uid="uid://dagc37o6uwske" path="res://scenes/badThings/spawner/spawner.tscn" id="3_jhxve"]
+[ext_resource type="PackedScene" uid="uid://bcb1h2uey52r2" path="res://scenes/player/player2.tscn" id="4_w0hiy"]
+[ext_resource type="Texture2D" uid="uid://s5gptssewjf6" path="res://assets/sprites/enviroments/outer_layer.png" id="6_dcsgt"]
+[ext_resource type="Theme" uid="uid://bi5spxiu2h766" path="res://scenes/playground/theme1.tres" id="6_tcqwf"]
+[ext_resource type="Texture2D" uid="uid://bhswd6t46f66v" path="res://assets/sprites/enviroments/bg_test.png" id="6_tei07"]
+[ext_resource type="SpriteFrames" uid="uid://7f3htaionmhm" path="res://assets/sprites/test_anim2.tres" id="6_w4wv1"]
+[ext_resource type="Script" path="res://scenes/backgrounds/paralax.gd" id="7_ah6cj"]
+[ext_resource type="Texture2D" uid="uid://c82g1d7ivbnkj" path="res://assets/sprites/enviroments/inner_layer.png" id="8_oj53i"]
+[ext_resource type="Texture2D" uid="uid://caj4bfux7e7mn" path="res://assets/sprites/enviroments/back_layer.png" id="9_do4ln"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x02d4"]
+bg_color = Color(0.423529, 0.709804, 0.831373, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 20
 
 [node name="PlaygroundBaseLevel" type="Node2D"]
+script = ExtResource("1_fd0yu")
+
+[node name="side_walls" parent="." instance=ExtResource("1_3oasu")]
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 100.0
+
+[node name="spawner" parent="." instance=ExtResource("3_jhxve")]
+unique_name_in_owner = true
+position = Vector2(225, -16)
+
+[node name="player" parent="." instance=ExtResource("4_w0hiy")]
+position = Vector2(96, 550)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 480.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_right = 45.0
+offset_bottom = 48.0
+grow_horizontal = 2
+
+[node name="ScoreLabel" type="Label" parent="Control/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "00000"
+horizontal_alignment = 1
+
+[node name="RestartPanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 2
+offset_left = 17.0
+offset_top = 206.0
+offset_right = 461.0
+offset_bottom = 443.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x02d4")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/RestartPanel"]
+layout_mode = 0
+offset_right = 448.0
+offset_bottom = 237.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/RestartPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="Control/RestartPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER!!"
+horizontal_alignment = 1
+
+[node name="ScoreLabelFinal" type="Label" parent="Control/RestartPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "00000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Control/RestartPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("6_tcqwf")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Restart"
+
+[node name="SlimeHop" type="AnimatedSprite2D" parent="Control/RestartPanel"]
+position = Vector2(376, 109)
+sprite_frames = ExtResource("6_w4wv1")
+
+[node name="SlimeHop2" type="AnimatedSprite2D" parent="Control/RestartPanel"]
+position = Vector2(77, 109)
+sprite_frames = ExtResource("6_w4wv1")
+flip_h = true
+
+[node name="BgTest" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(233, 320)
+texture = ExtResource("6_tei07")
+
+[node name="outer" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = -2
+position = Vector2(233, 319)
+texture = ExtResource("6_dcsgt")
+script = ExtResource("7_ah6cj")
+layer = 1
+
+[node name="middle" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = -4
+position = Vector2(238, 319)
+texture = ExtResource("8_oj53i")
+script = ExtResource("7_ah6cj")
+layer = 2
+
+[node name="back" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = -5
+position = Vector2(231, 320)
+texture = ExtResource("9_do4ln")
+script = ExtResource("7_ah6cj")
+
+[connection signal="pressed" from="Control/RestartPanel/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

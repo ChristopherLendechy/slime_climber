@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh8r24yjio4fw"]
+
+[ext_resource type="Shader" path="res://shaders/ScrollingImage_Y.gdshader" id="1_6aj4a"]
+[ext_resource type="Texture2D" uid="uid://s2172atx64r8" path="res://assets/sprites/enviroments/another_wall.png" id="2_fve08"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2sq66"]
+shader = ExtResource("1_6aj4a")
+shader_parameter/scroll_speed = 0.445
+shader_parameter/positive = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35up7"]
+
+[node name="side_walls" type="Node2D"]
+
+[node name="LeftSide" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_2sq66")
+offset_left = -25.0
+offset_right = 15.0
+offset_bottom = 64.0
+scale = Vector2(1.94312, 10.0059)
+texture = ExtResource("2_fve08")
+stretch_mode = 1
+
+[node name="LeftArea" type="Area2D" parent="."]
+
+[node name="LeftCollider" type="CollisionShape2D" parent="LeftArea"]
+position = Vector2(0, 320)
+scale = Vector2(4, 35)
+shape = SubResource("RectangleShape2D_35up7")
+
+[node name="RightSide" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_2sq66")
+offset_left = 428.0
+offset_top = -1.0
+offset_right = 468.0
+offset_bottom = 63.0
+scale = Vector2(1.94312, 10.0059)
+texture = ExtResource("2_fve08")
+stretch_mode = 1
+flip_h = true
+
+[node name="RightArea" type="Area2D" parent="."]
+position = Vector2(453, -1)
+
+[node name="RightCollider" type="CollisionShape2D" parent="RightArea"]
+position = Vector2(0, 320)
+scale = Vector2(4, 35)
+shape = SubResource("RectangleShape2D_35up7")

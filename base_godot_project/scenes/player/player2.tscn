@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcb1h2uey52r2"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_5fio3"]
+[ext_resource type="SpriteFrames" uid="uid://rylc6050fkvk" path="res://assets/sprites/test_anim.tres" id="1_7yp1n"]
+[ext_resource type="Shader" path="res://assets/sprites/player/slime_shader.gdshader" id="2_4jh5y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_41rrl"]
+shader = ExtResource("2_4jh5y")
+shader_parameter/frame_coords = Vector2(0, 0)
+shader_parameter/nb_frames = Vector2(0, 0)
+shader_parameter/velocity = Vector2(0, 0)
+shader_parameter/velocity_max = 300.0
+shader_parameter/trail_size = 6.0
+shader_parameter/alpha_start = 0.8
+shader_parameter/alpha_tail = 0.2
+shader_parameter/alpha_factor = 1.2
+shader_parameter/noise_margin = 0.68
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xp5bx"]
+
+[node name="player" type="Node2D" groups=["player"]]
+script = ExtResource("1_5fio3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_41rrl")
+rotation = 1.5708
+sprite_frames = ExtResource("1_7yp1n")
+animation = &"flying"
+speed_scale = 2.0
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0, 18)
+scale = Vector2(-3.47068, 2.44789)
+shape = SubResource("CircleShape2D_xp5bx")

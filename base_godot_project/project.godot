@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Base Godot Project"
-run/main_scene="res://scenes/main_game.tscn"
+config/name="Slime Climber"
+run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -30,3 +30,13 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
+
+[layer_names]
+
+2d_physics/layer_1="Background"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemies"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dingkqliak7tr"]
+[gd_scene load_steps=4 format=3 uid="uid://dingkqliak7tr"]
 
 [ext_resource type="Script" path="res://autoloads/SoundManager.gd" id="1_ultq8"]
 [ext_resource type="Script" path="res://management/sound_management/SoundQueue.gd" id="2_gbq7l"]
+[ext_resource type="AudioStream" uid="uid://ddgpndvxoy4fg" path="res://assets/sounds/song_loop.mp3" id="3_emta6"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_ultq8")
 
-[node name="CameraFlashSQ" type="Node" parent="."]
+[node name="song_loop" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_gbq7l")
+count = 5
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CameraFlashSQ"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="song_loop"]
+stream = ExtResource("3_emta6")
+volume_db = -15.928

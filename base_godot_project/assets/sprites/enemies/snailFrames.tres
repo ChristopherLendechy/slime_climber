@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cb0astfbnxg0m"]
+
+[ext_resource type="Texture2D" uid="uid://dg4ac000eweyb" path="res://assets/sprites/enemies/snail_enemy_recolor-Sheet.png" id="1_t0xfm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18mdu"]
+atlas = ExtResource("1_t0xfm")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12u82"]
+atlas = ExtResource("1_t0xfm")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjqua"]
+atlas = ExtResource("1_t0xfm")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc1ht"]
+atlas = ExtResource("1_t0xfm")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8f54"]
+atlas = ExtResource("1_t0xfm")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1050e"]
+atlas = ExtResource("1_t0xfm")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw2bv"]
+atlas = ExtResource("1_t0xfm")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41t6y"]
+atlas = ExtResource("1_t0xfm")
+region = Rect2(700, 0, 100, 100)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18mdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12u82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjqua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc1ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8f54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1050e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw2bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41t6y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
