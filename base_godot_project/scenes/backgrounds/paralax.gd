@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var layer = 1
+@export var layer = 0
 var speedOffset = -0.02
 
 
