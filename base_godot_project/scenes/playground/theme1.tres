@@ -17,3 +17,4 @@ corner_radius_bottom_left = 15
 [resource]
 Button/styles/hover = SubResource("StyleBoxFlat_p14dl")
 Button/styles/normal = SubResource("StyleBoxFlat_dpr4l")
+Button/styles/pressed = SubResource("StyleBoxFlat_dpr4l")
