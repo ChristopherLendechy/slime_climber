@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://csqa707dlmhw1"]
+[gd_scene load_steps=15 format=3 uid="uid://csqa707dlmhw1"]
 
 [ext_resource type="Script" path="res://scenes/badThings/enemy/enemy.gd" id="1_8341m"]
 [ext_resource type="SpriteFrames" uid="uid://rylc6050fkvk" path="res://assets/sprites/test_anim.tres" id="2_f2kad"]
+[ext_resource type="PackedScene" uid="uid://cui1h5hhri5ap" path="res://management/sound_management/SoundQueue.tscn" id="4_7aley"]
 [ext_resource type="Texture2D" uid="uid://cwrsw1gdkdpvt" path="res://assets/sprites/enemies/test_bat_animated-Sheet.png" id="4_bwto2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vclu7"]
@@ -97,5 +98,10 @@ shape = SubResource("CircleShape2D_vclu7")
 [node name="BatSprite2" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vqm2u")
 frame_progress = 0.549004
+
+[node name="SoundQueue" parent="." instance=ExtResource("4_7aley")]
+count = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundQueue"]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

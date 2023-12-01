@@ -2,7 +2,7 @@ extends Node2D
 
 @export var animated_sprite_2d: AnimatedSprite2D
 
-
+@onready var soundQueue = $SoundQueue
 var LeftPos = Vector2(-230,0)
 var RightPos = Vector2(230,0)
 var Left = true
@@ -41,3 +41,7 @@ func StartRight():
 	position = RightPos
 	tween = create_tween()
 	tween.parallel().tween_property($".","position",Vector2(-230, 700),2)
+
+
+func playThisSound():
+	soundQueue.play_sound()

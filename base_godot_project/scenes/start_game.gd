@@ -13,3 +13,4 @@ func _process(delta):
 
 func _on_start_game_pressed():
 	get_tree().change_scene_to_packed(next_scene)
+

@@ -68,4 +68,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Exit Game"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
